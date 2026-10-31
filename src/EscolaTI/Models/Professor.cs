@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public string Nome { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
-        public bool Titulacao { get; set; }
+        public string Titulacao { get; set; } = string.Empty;
     }
 }
