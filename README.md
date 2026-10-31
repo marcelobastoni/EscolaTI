@@ -48,19 +48,27 @@ tests/EscolaTI.Tests/   Testes de integração da API
 erDiagram
     ALUNO ||--o{ INSCRICAO : possui
     CURSO ||--o{ INSCRICAO : recebe
-    ALUNO { int Id PK
-            string Nome
-            string Email UK
-            bool Ativo }
-    CURSO { int Id PK
-            string Nome
-            datetime DataInicio }
-    INSCRICAO { int AlunoId PK
-                int CursoId PK }
-    PROFESSOR { int Id PK
-                string Nome
-                string Email UK
-                string Titulacao }
+    ALUNO {
+        int Id PK
+        string Nome
+        string Email UK
+        bool Ativo
+    }
+    CURSO {
+        int Id PK
+        string Nome
+        datetime DataInicio
+    }
+    INSCRICAO {
+        int AlunoId PK, FK
+        int CursoId PK, FK
+    }
+    PROFESSOR {
+        int Id PK
+        string Nome
+        string Email UK
+        string Titulacao
+    }
 ```
 
 O SQLite foi escolhido para que o projeto rode sem instalar um servidor de banco de dados. O acesso passa pelo EF Core, o que facilita uma futura troca de banco.
